@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 // ----------------------------------------
 // DATA
@@ -76,10 +77,18 @@ const filters = [
 ];
 
 // ----------------------------------------
-// COMPONENT
+// COMPONENT CONTENT
 // ----------------------------------------
-export default function Gallery() {
+function GalleryContent() {
+    const searchParams = useSearchParams();
+    const initialCategory = searchParams.get("category");
     const [activeFilter, setActiveFilter] = useState("All");
+
+    useEffect(() => {
+        if (initialCategory && filters.includes(initialCategory)) {
+            setActiveFilter(initialCategory);
+        }
+    }, [initialCategory]);
 
     const filteredImages =
         activeFilter === "All"
@@ -87,12 +96,12 @@ export default function Gallery() {
             : galleryData.filter((item) => item.category === activeFilter);
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 pb-16 pt-0">
 
             {/* HEADER */}
-            <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold mb-4">Our Portfolio</h1>
-                <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <div className="text-center mb-12 max-w-[800px] mx-auto pt-10">
+                <h1 className="text-[38px] font-semibold text-[#222] mb-[10px]">Our Portfolio</h1>
+                <p className="text-[20px] text-[#666] leading-[1.6] m-0">
                     Explore our collection of custom furniture projects. Each piece showcases
                     our commitment to quality craftsmanship and attention to detail.
                 </p>
@@ -159,5 +168,16 @@ export default function Gallery() {
                 </Link>
             </div>
         </div>
+    );
+}
+
+// ----------------------------------------
+// MAIN PAGE COMPONENT
+// ----------------------------------------
+export default function Gallery() {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+            <GalleryContent />
+        </Suspense>
     );
 }

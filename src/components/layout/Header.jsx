@@ -28,7 +28,7 @@ export function Header() {
     }, []);
 
     return (
-        <header className="bg-white border-b border-gray-200">
+        <header className="bg-white border-b border-[#E5E7EB]">
             {/* Main container - uses flex and justify-between for spacing */}
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
 
@@ -57,7 +57,7 @@ export function Header() {
                             placeholder={isFocused ? "" : `Search for ${searchTerms[currentTermIndex]}...`}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
-                            className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                            className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                         // TODO: Add onChange handler for search functionality
                         // onChange={(e) => handleSearch(e.target.value)}
                         />
@@ -115,7 +115,7 @@ export function Header() {
                     {/* Call-to-action button */}
                     <Link href="/contact-us">
                         <button
-                            className="bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+                            className="bg-orange-500 text-white px-6 py-2 rounded-[14px] font-medium hover:bg-orange-600 transition-colors"
                         >
                             Request Quote
                         </button>

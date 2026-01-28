@@ -72,47 +72,47 @@ export default function Footer() {
             <h3 className="text-[#10b981] font-semibold mb-6">Our Products</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=Bedroom" className="hover:underline transition">
                   Bed Room
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=Living Room" className="hover:underline transition">
                   Living Room
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=Dining" className="hover:underline transition">
                   Dining Room
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=Living Room" className="hover:underline transition">
                   Accent Furniture
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=Living Room" className="hover:underline transition">
                   Sofa
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=All" className="hover:underline transition">
                   Outdoor
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=All" className="hover:underline transition">
                   Antique Furniture
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=All" className="hover:underline transition">
                   Home Decor
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline transition">
+                <Link href="/gallery?category=All" className="hover:underline transition">
                   Chandeliers
                 </Link>
               </li>
