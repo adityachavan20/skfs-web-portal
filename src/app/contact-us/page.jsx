@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SubmitButton from   "@/components/submit-quote-button" 
 
 
 export default function RequestQuotePage() {
@@ -166,12 +167,17 @@ export default function RequestQuotePage() {
               ✨ Get AI Suggestions
             </button>
 
-            <button
+          
+          <SubmitButton formData={formData} />
+              
+
+    
+            {/*<button
               onClick={handleSubmit}
               className="flex-1 bg-sky-600 text-white rounded-md py-2 text-xs font-medium hover:bg-sky-700"
             >
               Submit Quote Request
-            </button>
+            </button>*/}
           </div>
 
           {submitted && (
